@@ -10,7 +10,7 @@ import UIKit
 
 class WatchlistViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var watchlistTableView: UITableView!
     
     var selectedIndex = 0
     
@@ -19,16 +19,14 @@ class WatchlistViewController: UIViewController {
         
         _ = TMDBClient.getWatchlist() { movies, error in
             MovieModel.watchlist = movies
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            self.watchlistTableView.reloadData()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        watchlistTableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
