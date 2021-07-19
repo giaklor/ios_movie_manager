@@ -54,6 +54,9 @@ extension WatchlistViewController: UITableViewDataSource, UITableViewDelegate {
         let movie = MovieModel.watchlist[indexPath.row]
         
         cell.textLabel?.text = movie.title
+        if let posterPath = movie.posterPath {
+            TMDBClient.download
+        }
         
         return cell
     }

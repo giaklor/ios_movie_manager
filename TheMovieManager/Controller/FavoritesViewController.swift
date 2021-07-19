@@ -23,7 +23,7 @@ class FavoritesViewController: UIViewController {
         super.viewWillAppear(animated)
         
         _ = TMDBClient.getFavoritesList() { movies, error in
-            MovieModel.watchlist = movies
+            MovieModel.favorites = movies
             self.tableView.reloadData()
         }
     }

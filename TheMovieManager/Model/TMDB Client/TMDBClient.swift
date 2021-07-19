@@ -27,7 +27,10 @@ class TMDBClient {
         case getSession
         case webAuth
         case getWatchlist
+        case markWatchlist
         case getFavorites
+        case markFavorite
+        case search(String)
         case logout
          
         var stringValue: String {
@@ -37,7 +40,10 @@ class TMDBClient {
             case .getSession: return Endpoints.base + "/authentication/session/new" + Endpoints.apiKeyParam
             case .webAuth: return "https://www.themoviedb.org/authenticate/" + Auth.requestToken + "?redirect_to=themoviemanager:authenticate"
             case .getWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .markWatchlist: return Endpoints.base + "/account/\(Auth.accountId)/watchlist" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
             case .getFavorites: return Endpoints.base + "/account/\(Auth.accountId)/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
+            case .search(let query): return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
             case .logout: return Endpoints.base + "/authentication/session" + Endpoints.apiKeyParam
             }
         }
@@ -87,6 +93,19 @@ class TMDBClient {
         }
     }
     
+    class func markWatchlist(movieId: Int, watchlistAdd: Bool, completion: @escaping (Bool, Error?) -> Void) {
+        let body = MarkWatchlist(mediaType: "movie", mediaId: movieId, watchlist: watchlistAdd)
+        taskForPOSTRequest(url: Endpoints.markWatchlist.url, responseType: TMDBResponse.self, body: body) {
+            (response, error) in
+            if let response = response {
+                completion(isSuccessStatusCode(statusCode: response.statusCode), nil)
+            }
+            else {
+                completion(false, error)
+            }
+        }
+    }
+    
     class func getFavoritesList(completion: @escaping ([Movie], Error?) -> Void) {
         taskForGETRequest(url: Endpoints.getFavorites.url, responseType: MovieResults.self) {
             (response, error) in
@@ -95,6 +114,19 @@ class TMDBClient {
             }
             else {
                 completion([], error)
+            }
+        }
+    }
+    
+    class func markFavorite(movieId: Int, favoriteAdd: Bool, completion: @escaping (Bool, Error?) -> Void) {
+        let body = MarkFavorite(mediaType: "movie", mediaId: movieId, favorite: favoriteAdd)
+        taskForPOSTRequest(url: Endpoints.markFavorite.url, responseType: TMDBResponse.self, body: body) {
+            (response, error) in
+            if let response = response {
+                completion(isSuccessStatusCode(statusCode: response.statusCode), nil)
+            }
+            else {
+                completion(false, error)
             }
         }
     }
@@ -108,6 +140,18 @@ class TMDBClient {
             }
             else {
                 completion(false, error)
+            }
+        }
+    }
+    
+    class func search(query: String, completion: @escaping ([Movie], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.search(query).url, responseType: MovieResults.self) {
+            (response, error) in
+            if let response = response {
+                completion(response.results, nil)
+            }
+            else {
+                completion([], error)
             }
         }
     }
@@ -176,6 +220,10 @@ class TMDBClient {
             }
         }
         task.resume()
+    }
+    
+    class func isSuccessStatusCode(statusCode: Int) -> Bool {
+        return (statusCode == 1 || statusCode == 12 || statusCode == 13)
     }
     
 }
