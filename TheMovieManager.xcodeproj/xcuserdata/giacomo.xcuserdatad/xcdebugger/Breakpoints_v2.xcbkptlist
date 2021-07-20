@@ -7,24 +7,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1BF5732E-2678-4467-BACF-BADA0A1CC4EE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TheMovieManager/Controller/FavoritesViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "E3936681-47E3-46A8-A6FE-87E8B5FF7A35"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TheMovieManager/Controller/WatchlistViewController.swift"
@@ -33,6 +17,150 @@
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F2879FD-ED32-4D86-B54E-31711F0C9551"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheMovieManager/Controller/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68921122-7765-4117-A71B-CE7878258257"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheMovieManager/Model/TMDB Client/TMDBClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "search(query:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5DDB316-0BD2-4215-A5B5-980917B68527"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheMovieManager/Model/TMDB Client/TMDBClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "search(query:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5DDB316-0BD2-4215-A5B5-980917B68527 - f9efe4d87126b947"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TheMovieManager.TMDBClient.search(query: Swift.String, completion: (Swift.Array&lt;TheMovieManager.Movie&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheMovieManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giacomo/XcodeProjects/ios-nd-networking-master/TheMovieManagerStarter/TheMovieManager/Model/TMDB%20Client/TMDBClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "744">
+               </Location>
+               <Location
+                  uuid = "C5DDB316-0BD2-4215-A5B5-980917B68527 - 5aabd019aa9c9d1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;TheMovieManager.MovieResults&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static TheMovieManager.TMDBClient.search(query: Swift.String, completion: (Swift.Array&lt;TheMovieManager.Movie&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheMovieManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giacomo/XcodeProjects/ios-nd-networking-master/TheMovieManagerStarter/TheMovieManager/Model/TMDB%20Client/TMDBClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "500DC34A-A108-4CB0-9298-BC2784B40049"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheMovieManager/Model/TMDB Client/TMDBClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "taskForGETRequest(url:responseType:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "500DC34A-A108-4CB0-9298-BC2784B40049 - 2e4756b8c872cafb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TheMovieManager.TMDBClient.taskForGETRequest&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, responseType: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheMovieManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giacomo/XcodeProjects/ios-nd-networking-master/TheMovieManagerStarter/TheMovieManager/Model/TMDB%20Client/TMDBClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "145"
+                  endingLineNumber = "145"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "500DC34A-A108-4CB0-9298-BC2784B40049 - 79e0e4045adc5122"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static TheMovieManager.TMDBClient.taskForGETRequest&lt;A where A: Swift.Decodable&gt;(url: Foundation.URL, responseType: A.Type, completion: (Swift.Optional&lt;A&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TheMovieManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giacomo/XcodeProjects/ios-nd-networking-master/TheMovieManagerStarter/TheMovieManager/Model/TMDB%20Client/TMDBClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "576">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29AC7C2E-BCD0-4FDF-8B35-B6740AF72376"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheMovieManager/Controller/MovieDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "handleFavoriteResponse(success:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
