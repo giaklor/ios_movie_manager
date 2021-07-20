@@ -20,6 +20,7 @@ class TMDBClient {
     
     enum Endpoints {
         static let base = "https://api.themoviedb.org/3"
+        static let baseImage = "https://image.tmdb.org/t/p/w500"
         static let apiKeyParam = "?api_key=\(TMDBClient.apiKey)"
         
         case login
@@ -31,6 +32,7 @@ class TMDBClient {
         case getFavorites
         case markFavorite
         case search(String)
+        case getPosterImage(String)
         case logout
          
         var stringValue: String {
@@ -44,6 +46,7 @@ class TMDBClient {
             case .getFavorites: return Endpoints.base + "/account/\(Auth.accountId)/favorite/movies" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
             case .markFavorite: return Endpoints.base + "/account/\(Auth.accountId)/favorite" + Endpoints.apiKeyParam + "&session_id=\(Auth.sessionId)"
             case .search(let query): return Endpoints.base + "/search/movie" + Endpoints.apiKeyParam + "&query=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+            case .getPosterImage(let posterPath): return Endpoints.baseImage + "/\(posterPath)"
             case .logout: return Endpoints.base + "/authentication/session" + Endpoints.apiKeyParam
             }
         }
@@ -154,6 +157,16 @@ class TMDBClient {
                 completion([], error)
             }
         }
+    }
+    
+    class func dowloadPosterImage(path: String, completion: @escaping (Data?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: Endpoints.getPosterImage(path).url)
+        { data, response, error in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
+        task.resume()
     }
     
     class func logout(completion: @escaping () -> Void) {
